@@ -1,24 +1,11 @@
 import api from './helpers/wp_api.js';
 import { ajax } from './helpers/ajax.js';
+import { Title } from './components/Title.js';
+import { Loader } from './components/Loader.js';
 
 export function App() {
-  document.getElementById(
-    'root'
-  ).innerHTML = `<h1>Bienvenidos a mi primer SPA con Vanilla JS</h1>`;
-
-  ajax({
-    url: api.POST,
-    cbSuccess: (post) => {
-      console.log(post);
-    },
-  });
-
-  ajax({
-    url: api.CATEGORIES,
-    cbSuccess: (categories) => {
-      console.log(categories);
-    },
-  });
-
-  console.log();
+  const d = document,
+    $root = d.getElementById('root');
+  $root.appendChild(Title());
+  $root.appendChild(Loader());
 }
