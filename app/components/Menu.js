@@ -4,8 +4,10 @@ export function Menu() {
   $menu.innerHTML = `
   <a href="#/">Home</a>
   <span>-</span>
-  <a href="#/">Busqueda</a>
+  <a href="#/search">Busqueda</a>
   <span>-</span>
+  <a href="#/contacto">Contacto</a>
+  <span>-</span>  
   <a href="https://aprendejavascript.org" target="_blank" rel="noopener">Aprende JavaScript</a>  
   `;
   return $menu;
