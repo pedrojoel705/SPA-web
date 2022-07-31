@@ -43,6 +43,14 @@ img {
   background-color: #dc3545;
 }
 
+.error mark {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  color: #fff;
+  background-color: #01579b;
+}
+
 .search-form {
   margin: auto;
   text-align: center;
@@ -105,6 +113,9 @@ img {
 
 .post-page img {
   border-radius: 50%;
+  margin: auto;
+  display: block;
+  max-width: 100%;
 }
 
 .post-page article {
