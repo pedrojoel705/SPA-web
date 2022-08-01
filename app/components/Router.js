@@ -13,7 +13,7 @@ export async function Router() {
 
   if (!hash || hash === '#/') {
     await ajax({
-      url: api.POSTS,
+      url: `${api.POSTS}`,
       cbSuccess: (post) => {
         console.log(post);
         let html = '';
