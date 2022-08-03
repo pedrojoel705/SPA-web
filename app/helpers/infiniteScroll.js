@@ -12,7 +12,7 @@ export async function InfiniteScroll() {
     let { scrollTop, clientHeight, scrollHeight } = document.documentElement,
       { hash } = window.location;
 
-    if (scrollTop + clientHeight + 200 >= scrollHeight) {
+    if (scrollTop + clientHeight + 100 >= scrollHeight) {
       api.page++;
 
       if (!hash || hash === '#/') {
@@ -25,6 +25,7 @@ export async function InfiniteScroll() {
         return false;
       }
 
+      document.querySelector('.loader').style.display = 'block';
       await ajax({
         url: apiURL,
         cbSuccess: (post) => {
@@ -32,6 +33,7 @@ export async function InfiniteScroll() {
           let html = '';
           post.forEach((post) => (html += Component(post)));
           document.getElementById('main').insertAdjacentHTML('beforeend', html);
+          document.querySelector('.loader').style.display = 'none';
         },
       });
     }

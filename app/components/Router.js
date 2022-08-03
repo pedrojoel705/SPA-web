@@ -3,6 +3,7 @@ import { ajax } from '../helpers/ajax.js';
 import api from '../helpers/wp_api.js';
 import { Post } from './Post.js';
 import { SearchPost } from './SearchPost.js';
+import { ContactForm } from './ContactForm.js';
 
 export async function Router() {
   const $main = document.getElementById('main');
@@ -46,7 +47,7 @@ export async function Router() {
       },
     });
   } else if (hash === '#/contacto') {
-    $main.innerHTML = `<h2>Seccion de Contacto</h2>`;
+    $main.appendChild(ContactForm());
   } else {
     await ajax({
       url: `${api.POST}/${localStorage.getItem('wpPostId')}?_embed`,
