@@ -180,7 +180,9 @@ export function ContactForm() {
         });
     });
   }
-  contactFormValidation();
+  setTimeout(() => {
+    contactFormValidation();
+  }, 100);
 
   return $form;
 }
